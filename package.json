@@ -1,0 +1,24 @@
+{
+  "name": "build-an-interactive-form",
+  "version": "1.0.0",
+  "description": "An interactive form.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshvaiko/build-an-interactive-form.git"
+  },
+  "author": "Stan Shvaika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sshvaiko/build-an-interactive-form/issues"
+  },
+  "homepage": "https://github.com/sshvaiko/build-an-interactive-form#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11"
+  }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register for Full Stack Conf</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+    <header>
+      <span>Register for</span>
+      <h1>Full Stack Conf</h1>
+    </header>
+
+    <form action="index.html" method="post">
+
+      <fieldset>
+        <legend>Basic Info</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" class="js-validate required textfield">
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email" class="js-validate required textfield email">
+
+        <label for="title">Job Role</label>
+        <select id="title" name="user_title">
+          <option value="full-stack js developer">Full Stack JavaScript Developer</option>
+          <option value="front-end developer">Front End Developer</option>
+          <option value="back-end developer">Back End Developer</option>
+          <option value="designer">Designer</option>
+          <option value="student">Student</option>
+          <option value="other">Other</option>
+        </select>
+
+        <input type="text" id="other-title" name="other_title" placeholder="Your Job Role">
+      </fieldset>
+
+      <fieldset class="shirt">
+        <legend>T-Shirt Info</legend>
+
+        <div>
+          <label for="size">Size:</label>
+          <select id="size" name="user_size">
+            <option value="small">S</option>
+            <option value="medium" selected>M</option>
+            <option value="large">L</option>
+            <option value="extra large">XL</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="design">Design:</label>
+          <select id="design" name="user_design">
+            <option>Select Theme</option>
+            <option value="js puns" data-name="puns">Theme - JS Puns</option>
+            <option value="heart js" data-name="heart">Theme - I &#9829; JS</option>
+          </select>
+        </div>
+
+        <div id="colors-js-puns" class="">
+          <label for="color">Color:</label>
+          <select id="color">
+            <option value="cornflowerblue" data-relation="puns">Cornflower Blue (JS Puns shirt only)</option>
+            <option value="darkslategrey" data-relation="puns">Dark Slate Grey (JS Puns shirt only)</option>
+            <option value="gold" data-relation="puns">Gold (JS Puns shirt only)</option>
+            <option value="tomato" data-relation="heart">Tomato (I &#9829; JS shirt only)</option>
+            <option value="steelblue" data-relation="heart">Steel Blue (I &#9829; JS shirt only)</option>
+            <option value="dimgrey" data-relation="heart">Dim Grey (I &#9829; JS shirt only)</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset class="activities">
+        <legend>Register for Activities</legend>
+        <label><input type="checkbox" name="all" data-price="200"> Main Conference — $200</label>
+        <label><input type="checkbox" name="js-frameworks" data-price="100" data-time="tuesday-9am-12pm"> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
+        <label><input type="checkbox" name="js-libs" data-price="100" data-time="tuesday-1pm-4pm"> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
+        <label><input type="checkbox" name="express" data-price="100" data-time="tuesday-9am-12pm"> Express Workshop — Tuesday 9am-12pm, $100</label>
+        <label><input type="checkbox" name="node" data-price="100" data-time="tuesday-1pm-4pm"> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
+        <label><input type="checkbox" name="build-tools" data-price="100" data-time="wednesday-9am-12pm"> Build tools Workshop — Wednesday 9am-12pm, $100</label>
+        <label><input type="checkbox" name="npm" data-price="100" data-time="wednesday-1pm-4pm"> npm Workshop — Wednesday 1pm-4pm, $100</label>
+
+      </fieldset>
+      <fieldset>
+        <legend>Payment Info</legend>
+
+        <label for="payment">I'm going to pay with:</label>
+        <select id="payment" name="user_payment">
+          <option value="select_method">Select Payment Method</option>
+          <option value="credit-card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bitcoin">Bitcoin</option>
+        </select>
+
+        <div id="credit-card" class="payment-info credit-card">
+
+          <div class="col-6 col">
+            <label for="cc-num">Card Number:</label>
+        	  <input id="cc-num" name="user_cc-num" type="text" class="js-validate required numberfield" data-size="16" data-message="Should be 16 numbers.">
+          </div>
+
+          <div class="col-3 col">
+            <label for="zip">Zip Code:</label>
+            <input id="zip" name="user_zip" type="text" class="js-validate required numberfield" data-size="5" data-message="Should be 5 numbers.">
+          </div>
+
+          <div class="col-3 col">
+            <label for="cvv">CVV:</label>
+            <input id="cvv" name="user_cvv" type="text" class="js-validate required numberfield" data-size="3" data-message="Should be 3 numbers.">
+          </div>
+
+          <label for="exp-month">Expiration Date:</label>
+          <select id="exp-month" name="user_exp-month">
+            <option value="1">1 - January</option>
+            <option value="2">2 - February</option>
+            <option value="3">3 - March</option>
+            <option value="4">4 - April</option>
+            <option value="5">5 - May</option>
+            <option value="6">6 - June</option>
+            <option value="7">7 - July</option>
+            <option value="8">8 - August</option>
+            <option value="9">9 - September</option>
+            <option value="10">10 - October</option>
+            <option value="11">11 - November</option>
+            <option value="12">12 - December</option>
+          </select>
+          <label for="exp-year">Expiration Year:</label>
+          <select id="exp-year" name="user_exp-year">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+          </select>
+        </div>
+
+        <div id="paypal" class="payment-info paypal">
+        	<p>If you selected the PayPal option we'll take you to Paypal's site to set up your billing information, when you click “Register” below.</p>
+        </div>
+
+        <div id="bitcoin" class="payment-info bitcoin">
+        	<p>If you selected the Bitcoin option we'll take you to the Coinbase site to set up your billing information. Due to the nature of exchanging Bitcoin, all Bitcoin transactions will be final.</p>
+        </div>
+
+      </fieldset>
+
+      <button type="submit">Register</button>
+
+    </form>
+
+	</div>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
