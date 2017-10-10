@@ -34,7 +34,7 @@
         function showExtraField(dependentElement, dependentValue, targetElement) {
           // hide target element when page loaded
           targetElement.hide();
-          // show target element if user chose specified value
+          // show target element if user choses specified value
           dependentElement.on('change', (e) => {
             if(dependentElement.val() === dependentValue) {
               targetElement.show();
@@ -50,7 +50,7 @@
         function updatePrice() {
           let $selectedActivities = $activities.find('input:checked');
           let price = 0;
-          // check all checked activities and consider the price
+          // check all chosen activities and consider the price
           $selectedActivities.each( (i, item) => {
             let $element = $(item);
             price += parseInt($element.attr('data-price'));
@@ -65,7 +65,7 @@
         /**
          * Validate email by using regex
          * @param  {string} email string to validate
-         * @return {boolean} true if it is an email or false it is not
+         * @return {boolean} true if it is an email or false it is not one
          */
         function validateEmail(email) {
           let regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
@@ -79,7 +79,7 @@
         /**
          * Validate number by using regex
          * @param  {string} email string to validate
-         * @return {boolean} true if it is an number or false it is not
+         * @return {boolean} true if it is an number or false it is not one
          */
         function validateNumber(number) {
           let regex = /^[0-9]+$/;
@@ -101,7 +101,7 @@
           // check text fields
           $validateInputs.each( (i, item) => {
             let $input = $(item);
-            // first check if field is not empty
+            // first check if a field is not empty
             if($input.hasClass('required') && $input.val() == '') {
               $input.after('<div class="error-mesage">Please fill out this field.</div>');
               $input.addClass('error');
@@ -152,7 +152,7 @@
         }, 1);
 
         /**
-         * First hide Job Role extra field, then show it if user chose 'Other'.
+         * First hide Job Role extra field, then show it if user choses 'Other'.
          */
         showExtraField($jobRole, 'other', $jobRoleExtra);
 
@@ -179,14 +179,14 @@
                }
              });
            } else {
-             // if user didn't choose theme hide color select
+             // if user didn't choose theme, hide color select
              $designColorContainer.hide();
            }
          });
 
          /**
-          * Check activities when use changes them.
-          * Update price and disable if have conflict.
+          * Check activities when user changes them.
+          * Update price and disable if there is a conflict.
           */
          $activities.append($totalPrice);
          $activities.on('change', 'input', (e) => {
@@ -198,16 +198,18 @@
            let selectedTime = target.attr('data-time');
            if(target.is(':checked')) {
              // disable other options with the same date and time
-             $activities.find('input[data-time=' + selectedTime + ']:not(:checked)').attr('disabled', true);
+             $activities.find('input[data-time=' + selectedTime + ']:not(:checked)').attr('disabled', true)
+             .parent().addClass('disabled');
            } else {
              // enable other options
-             $activities.find('input[data-time=' + selectedTime + ']').attr('disabled', false);
+             $activities.find('input[data-time=' + selectedTime + ']').attr('disabled', false)
+             .parent().removeClass('disabled');
            }
          });
 
          /**
           * Payment methods.
-          * Lest show credit card payment info (default value),
+          * First show credit card payment info (default value),
           * and then show payment info for selected method.
           */
          $paymentMethod.val(defaultMethod);
@@ -241,7 +243,7 @@
            validate();
          });
 
-         // validate when user change input fields
+         // validate when user changes input fields
          $form.on('keyup change', 'input', (e) => {
            validate();
          });

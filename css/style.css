@@ -116,6 +116,10 @@ button:hover {
 	background: #184c62;
 }
 
+label.disabled {
+  color: gray;
+}
+
 .error-mesage {
   color: #b62c10;
   margin-top: -10px;
