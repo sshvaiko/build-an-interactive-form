@@ -56,7 +56,7 @@
             price += parseInt($element.attr('data-price'));
           });
           if(price > 0) {
-            $totalPrice.find('span').text(price).show();
+            $totalPrice.show().find('span').text(price);
           } else {
             $totalPrice.hide();
           }
@@ -118,7 +118,7 @@
                   $input.after('<div class="error-mesage">Please use numbers.</div>');
                   error = true;
                 } else {
-                  if($input.val().length !== parseInt($input.attr('data-size'))) {
+                  if($input.val().length < parseInt($input.attr('data-min-size')) || $input.val().length > parseInt($input.attr('data-max-size'))) {
                     let errorMessage = $input.attr('data-message');
                      $input.after('<div class="error-mesage">' + errorMessage + '</div>');
                      error = true;

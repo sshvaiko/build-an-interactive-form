@@ -100,19 +100,19 @@
 
           <div class="col-6 col">
             <label for="cc-num">Card Number:</label>
-        	  <input id="cc-num" name="user_cc-num" type="text" class="js-validate required numberfield" data-size="16" data-message="Should be 16 numbers.">
+        	  <input id="cc-num" name="user_cc-num" type="text" class="js-validate required numberfield" data-min-size="13" data-max-size="16" data-message="Should be between 13 and 16 digits.">
           </div>
 
           <div class="col-3 col">
             <label for="zip">Zip Code:</label>
-            <input id="zip" name="user_zip" type="text" class="js-validate required numberfield" data-size="5" data-message="Should be 5 numbers.">
+            <input id="zip" name="user_zip" type="text" class="js-validate required numberfield" data-min-size="5" data-max-size="5" data-message="Should be 5 digits.">
           </div>
 
           <div class="col-3 col">
             <label for="cvv">CVV:</label>
-            <input id="cvv" name="user_cvv" type="text" class="js-validate required numberfield" data-size="3" data-message="Should be 3 numbers.">
+            <input id="cvv" name="user_cvv" type="text" class="js-validate required numberfield" data-min-size="3" data-max-size="3" data-message="Should be 3 digits.">
           </div>
-
+          <div class="clearfix"></div>
           <label for="exp-month">Expiration Date:</label>
           <select id="exp-month" name="user_exp-month">
             <option value="1">1 - January</option>
